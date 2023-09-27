@@ -54,6 +54,7 @@ function getBooks(books) {
         </a>
         </div>`
     }).join("")
+
     const allAddCart = document.querySelectorAll('#add_cart')
     allAddCart.forEach(buttCard => {
         let q=parseInt(buttCard.querySelector("span").innerHTML)
@@ -68,8 +69,14 @@ function getBooks(books) {
             }
         })
     })
-    // console.log(allAddCart[3])
-    // alert('OK')
+
+    const allCard=document.querySelectorAll('.card')
+    allCard.forEach(card => {
+        const salta=card.querySelector("#delete_card")
+        salta.addEventListener("click", function(){
+            card.remove()
+        })
+    })
 }
 
 //carico libri su DOM all'avvio
